@@ -3,9 +3,6 @@
 # 14/8/2018
 
 # DESCRIPTION: converts tag data output to a standardized NetCDF-CF format, following the formatting of the POPSTAR NetCDF Format Reference Manual, doi http://dx.doi.org/10.13155/34980 
-# tag_type options: "WILDLIFE"
-# tag_data_format options: "csv","nc","kmz",...
-# polygon
 
 ## REQUIRES:
 # tag_specifications.csv: describes the global attributes of the tag
@@ -42,13 +39,6 @@ Tag2NetCDF <- function(script_dir,
   library(pacman)
   p_load('plyr','ncdf4','rgeos','chron')
   
-  ## STANDARDIZE THE COLUMN NAMES BETWEEN THE DIFFERENT INPUT DATA FRAMES
-  
-  
-  # source(paste(home_dir,script_dir,'afilldim.R',sep=''))
-  # source(paste(home_dir,script_dir,'afilldim_var.R',sep=''))
-  # source(paste(home_dir,script_dir,'VARdim_array.R',sep=''))
-  # source(paste(home_dir,script_dir,'VAR_array_fast.R',sep=''))
   source(paste0(script_dir,'metadata_inputs_tag.R'))
   source(paste0(script_dir,'varid_list_create.R'))
   source(paste0(script_dir,'write_global_attributes_tag.R'))
@@ -172,10 +162,6 @@ Tag2NetCDF <- function(script_dir,
   # • Iridium (satellite) data: information on Iridium fixes provided with each sessions that occurred during data transmission.
   # The variable names are written in CAPITALIZED letters. Each variable has a specific set of attributes, some of which are mandatory. 
   # The mandatory variables or attributes are in bold characters in the following tables.
-  
-  
-  ##define variables of NetCDF - DEFINE EACH COLUMN AS VARIABLE
-  # nonAvailable <- 999999.
   
   ## COORDINATE VARIABLES, all attributes but 'comments' are mandatory
   ## <------------------- what are the dimensions for each of these variables?
@@ -518,15 +504,7 @@ Tag2NetCDF <- function(script_dir,
     nc<-ncvar_add(nc,HISTORY_QCTEST)
   }
   
-  ############################################# PUT VARIABLE IN FILE ###################################################
-  # var_array(df='tag_points',variable='time',variable_dims=list('Time'),standard_dims=list(TIME),varlabel='time',varid='JULD',ncfile=nc)
-  
-  # standard_dims<-list(time)
-  # dataDimF=NULL
-  # for (ss in 1:length(standard_dims)){
-  #   dataDimF=c(dataDimF,length(standard_dims[[ss]]))
-  # }
-  
+  ############################################# PUT VARIABLE IN FILE ##################################################
   ## convert tag_DATA$time to UTC origin 1950-01-01 00:00:00!!
   ncvar_put(nc=nc, varid='juld', vals=time,start=c(1),count=c(length(time)))
   ncvar_put(nc=nc, varid='juld_qc', vals=tag_data$juld_qc,start=c(1),count=c(length(time)))
@@ -704,12 +682,3 @@ Tag2NetCDF <- function(script_dir,
   }
   nc_close(nc)
 }
-
-
-# ##### RELOADS UPDATED ss3.24.R to INFRASTRUCTURE ####
-# overwrite<-T #SET TO "TRUE" IF THE FILES ALREADY ON THE WORKSPACE SHOULD BE OVERWRITTEN
-# outputs_WS <- paste("/Home",username,"Workspace/VRE Folders/IOTC_SS3/ss3_public/Rscripts/",sep="/")
-# listWS(outputs_WS) #GET THE LIST OF FILES AND FOLDERS IN ONE SUB-FOLDER
-# out2netcdf_outputs_SS3=paste(home_dir,'/Rscripts/OutputSS2NetCDF_standard.R',sep='') # FILE WITH THE FUNCTION TO WRITE OGC 19115 metadata
-# uploadWS(outputs_WS,out2netcdf_outputs_SS3,overwrite)
-# #####################################################
