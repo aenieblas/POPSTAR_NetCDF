@@ -103,10 +103,3 @@ write_global_attributes_tag <- function(metadata,ncfile,sp_resolution){
    
 }
 
-# ##### RELOADS UPDATED ss3.24.R to INFRASTRUCTURE ####
-# overwrite<-T #SET TO "TRUE" IF THE FILES ALREADY ON THE WORKSPACE SHOULD BE OVERWRITTEN
-# outputs_WS <- paste("/Home",username,"Workspace/VRE Folders/IOTC_SS3/ss3_public/Rscripts/",sep="/")
-# listWS(outputs_WS) #GET THE LIST OF FILES AND FOLDERS IN ONE SUB-FOLDER
-# netcdfglobatt_outputs_SS3=paste(home_dir,'/Rscripts/write_global_attributes.R',sep='') # FILE WITH THE FUNCTION TO WRITE OGC 19115 metadata
-# uploadWS(outputs_WS,netcdfglobatt_outputs_SS3,overwrite)
-# #####################################################
