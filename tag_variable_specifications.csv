@@ -1,0 +1,122 @@
+variable_name,varid,type,dimension,long_name,standard_name,conventions,units,_FillValue,valid_min,valid_max,axis,ancillary_variable,accuracy,precision,resolution,cell_methods,DM_indicator,reference_scale,coordinate_reference,coordinate_reference_frame,sdn_parameter_urn,sdn_uom_urn,comment  ,Example
+JULD,juld,double,TIME,Julian 1950 time,time,,days since 1950-01-01T00:00:00Z,999999,0,90000,T,JULD_QC,,,,,,,,,SDN:P01::XXX,SDN:P061::UTAA,"Date and time (UTC) of the measurement in days since midnight, 1950-01-01.","July 25, 2001, 19:14:00 is stored as 18833.8013889885."
+JULD_QC,juld_qc,byte,TIME,Quality flag,,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,Quality flag for each JULD value.,
+LATITUDE,latitude,double,TIME,Measurement latitude,latitude,,degree_north,99999,-90,90,Y,POSITION_QC,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALATZZ01,SDN:P061::DEGN,Latitude of the measurement. Units: degrees north, southern latitudes are negative.
+LONGITUDE,longitude,double,TIME,Measurement longitude,longitude,,degree_east,99999,-180,180,X,POSITION_QC,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALONZZ01,SDN:P061::DEGE,Longitude of the measurement. Unit: degrees east, western latitudes are negative.
+POSITION_QC,position_qc,byte,TIME,Quality flag,,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,Quality flag for each LATITUDE and LONGITUDE value.,
+POSITION_UNCERTAINTY,position_uncertainty,float,TIME,Uncertainty of measurement location,,,km,99999,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+LATITUDE_UNCERTAINTY_1,latitude_uncertainty_1,double,TIME,"Uncertainty level 1 of measurement latitude, polygon",latitude_uncertainty_1,,degree_north,99999,,,,,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALATZZ01,SDN:P061::DEGN,,
+LONGITUDE_UNCERTAINTY_1,longitude_uncertainty_1,double,TIME,"Uncertainty level 1 of measurement longitude, polygon",longitude_uncertainty_1,,degree_east,99999,,,,,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALONZZ01,SDN:P061::DEGE,,
+LATITUDE_UNCERTAINTY_2,latitude_uncertainty_2,double,TIME,"Uncertainty level 2 of measurement latitude, polygon",latitude_uncertainty_2,,degree_north,99999,,,,,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALATZZ01,SDN:P061::DEGN,,
+LONGITUDE_UNCERTAINTY_2,longitude_uncertainty_2,double,TIME,"Uncertainty level 2 of measurement longitude, polygon",longitude_uncertainty_2,,degree_east,99999,,,,,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALONZZ01,SDN:P061::DEGE,,
+LATITUDE_UNCERTAINTY_3,latitude_uncertainty_3,double,TIME,"Uncertainty level 3 of measurement longitude, polygon",latitude_uncertainty_1,,degree_north,99999,,,,,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALATZZ01,SDN:P061::DEGN,,
+LONGITUDE_UNCERTAINTY_3,longitude_uncertainty_3,double,TIME,"Uncertainty level 3 of measurement longitude, polygon",longitude_uncertainty_3,,degree_east,99999,,,,,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALONZZ01,SDN:P061::DEGE,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+DEPTH,depth,float,TIME,"Sea water pressure, equals 0 at sea-level ",depth  ,,m,999999,,,Z,,,,,,,,,,,,,
+TEMP,sea_water_temperature,float,TIME,Sea temperature in-situ ITS-90 scale,sea_water_temperature,,degree_Celsius,999999,-2.5f,40.f,,,,,,,,,,,,,,
+SUNRISE,sunrise,float,TIME,Time at sunrise,sunrise,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,,
+SUNSET,sunset,float,TIME,Time at sunset,sunset,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,,
+TEMP_QC,sea_water_temperature_qc,byte,TIME,Sea temperature in-situ ITS-90 scale quality flags,sea_water_temperature_qc,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,,
+DEPTH_QC,depth_qc,byte,TIME,Depth observed by tag quality flats,depth_qc,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,,
+SUNRISE_QC,sunrise_qc,byte,TIME,Time at sunrise quality flags,sunrise_qc,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,,
+SUNSET_QC,sunset_qc,byte,TIME,Time at sunset quality flags,sunset_qc,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,,
+TEMP_UNCERTAINTY,sea_water_temperature_uncertainty,float,TIME,Sea temperature in-situ ITS-90 scale uncertainty,sea_water_temperature_uncertainty,,degree_Celsius,999999,,,,,,,,,,,,,,,,
+DEPTH_UNCERTAINTY,depth_uncertainty,float,TIME,Depth observed by tag uncertainty,depth_uncertainty,,m,999999,,,Z,,,,,,,,,,,,,
+SUNRISE_UNCERTAINTY,sunrise_uncertainty,float,TIME,Time at sunrise uncertainty,sunrise_uncertainty,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,,
+SUNSET_UNCERTAINTY,sunset_uncertainty,float,TIME,Time at sunset uncertainty,sunset_uncertainty,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,,
+TEMP_ADJUSTED,sea_water_temperature_adjusted,float,TIME,Adjusted Sea temperature in-situ ITS-90 scale,sea_water_temperature_adjusted,,degree_Celsius,999999,,,,,,,,,,,,,,,,
+DEPTH_ADJUSTED,depth_adjusted,float,TIME,Adjusted Depth observed by tag,depth_adjusted,,m,999999,,,Z,,,,,,,,,,,,,
+SUNRISE_ADJUSTED,sunrise_adjusted,float,TIME,Adjusted Time at sunrise,sunrise_adjusted,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,,
+SUNSET_ADJUSTED,sunset_adjusted,float,TIME,Adjusted Time at sunset,sunset_adjusted,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,,
+TEMP_ADJUSTED_QC,sea_water_temperature_adjusted_qc,byte,TIME,Adjusted Sea temperature in-situ ITS-90 scale quality flags,sea_water_temperature_adjusted_qc,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,,
+DEPTH_ADJUSTED_QC,depth_adjusted_qc,byte,TIME,Adjusted Depth observed by tag quality flags,depth_adjusted_qc,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,,
+SUNRISE_ADJUSTED_QC,sunrise_adjusted_qc,byte,TIME,Adjusted Time at sunrise quality flags,sunrise_adjusted_qc,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,,
+SUNSET_ADJUSTED_QC,sunset_adjusted_qc,byte,TIME,Adjusted Time at sunset quality flags,sunset_adjusted_qc,POPSTAR reference table 2,,-128,0,9,,,,,,,,,,,,,,
+TEMP_ADJUSTED_UNCERTAINTY,sea_water_temperature_adjusted_uncertainty,float,TIME,Adjusted Sea temperature in-situ ITS-90 scale uncertainty,sea_water_temperature_adjusted_uncertainty,,degree_Celsius,999999,,,,,,,,,,,,,,,,
+DEPTH_ADJUSTED_UNCERTAINTY,depth_adjusted_uncertainty,float,TIME,Adjusted Depth observed by tag uncertainty,depth_adjusted_uncertainty,,m,999999,,,Z,,,,,,,,,,,,,
+SUNRISE_ADJUSTED_UNCERTAINTY,sunrise_adjusted_uncertainty,float,TIME,Adjusted Time at sunrise uncertainty,sunrise_adjusted_uncertainty,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,,
+SUNSET_ADJUSTED_UNCERTAINTY,sunset_adjusted_uncertainty,float,TIME,Adjusted Time at sunset uncertainty,sunset_adjusted_uncertainty,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+JULD_TECH,juld_tech,double,TIME_TECH,Julian 1950 time,time,,days since 1950-01-01T00:00:00Z,999999,0,90000,,,,,,,,,,,,SDN:P01::XXX,SDN:P061::UTAA,"Date and time (UTC) of the technical parameter in days since midnight, 1950-01-01."
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+JULD_SATELLITE,juld_satellite,double,TIME_IRIDIUM,Julian 1950 time of Iridium session,time,,days since 1950-01-01T00:00:00Z,999999,0,90000,,,,,,,,,,,,SDN:P01::XXX,SDN:P061::UTAA,"Date and time (UTC) of the Iridium session in days since midnight, 1950-01-01."
+LATITUDE_SATELLITE,latitude_satellite,double,TIME_IRIDIUM,Latitude of Iridium session,latitude,,degree_north,99999,-90,90,,,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALATZZ01,SDN:P061::DEGN,Latitude of the Iridium session. Units: degrees north, southern latitudes are negative.
+LONGITUDE_SATELLITE,longitude_satellite,double,TIME_IRIDIUM,Longitude of Iridium session,longitude,,degree_east,99999,-180,180,,,,,,,,,WGS84,urn:ogc:crs:EPSG::4326,SDN:P01::ALONZZ01,SDN:P061::DEGE,Longitude of the Iridium session. Unit: degrees east, western latitudes are negative.
+CEP_RADIUS_SATELLITE,cep_radius_satellite,integer,TIME_IRIDIUM,Circular error probability of Iridium session location,,,km,99999,,,,,,,,,,,,,,,Circular Error Probability associated to Iridium session location.,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+TAG_NUMBER,tag_number,char,STRING8,Tag unique identifier,,WMO tag identifier : A9IIIII,,,,,,,,,,,,,,,,,WMO tag identifier. WMO is the World Meteorological Organization. This platform number is unique.,
+IMEI,imei,char,STRING256,Iridium transmission identifier,,,,,,,,,,,,,,,,,,,Transmission identifier of the tag,
+TAG_MAKER,tag_maker,char,STRING256,Name of the manufacturer,,POPSTAR reference table 24,,,,,,,,,,,,,,,,,Name of the manufacturer. See POPSTAR reference table 24.,
+FIRMWARE_VERSION,firmware_version,char,STRING32,Firmware version for the tag,,,,,,,,,,,,,,,,,,,The firmware version. This is specified as per the format on the manufacturer�s manual.,
+MANUAL_VERSION,manual_version,char,STRING16,Manual version for the tag,,,,,,,,,,,,,,,,,,,The version date or number for the manual for each tag.,
+TAG_SERIAL_NO,tag_serial_no,char,STRING32,Serial number of the tag,,,,,,,,,,,,,,,,,,,This field should contain only the serial number of the tag.,
+DAC_FORMAT_ID,dac_format_id,char,STRING16,Format number used by the DAC to describe the data format type for each tag,,,,,,,,,,,,,,,,,,,Format numbers used by individual DACs to describe each tag type.,
+WMO_INST_TYPE,wmo_inst_type,char,STRING4,Coded instrument type,,POPSTAR reference table 8,,,,,,,,,,,,,,,,,Instrument type from WMO code table 1770. A subset of WMO table 1770 is documented in the reference table 8.,
+ANOMALY,anomaly,char,STRING256,Describe any anomalies or problems the tag may have had,,,,,,,,,,,,,,,,,,,This field describes any anomaly or problem the tag may have had.,
+BATTERY_TYPE,battery_type,char,STRING64,Type of battery packs in the tag,,,,,,,,,,,,,,,,,,,Describes the type of battery packs in the tag.,"�Alkaline�, �Lithium� or �Alkaline and Lithium�"
+BATTERY_PACKS,battery_packs,char,STRING64,Configuration of battery packs in the tag,,,,,,,,,,,,,,,,,,,"Describes the configuration of battery packs in the tag, number and type.",�4DD Li + 1C Alk�
+CONTROLLER_BOARD_TYPE,controller_board_type,char,STRING32,Type of controller board,,,,,,,,,,,,,,,,,,,Describes the type of controller board.,
+CONTROLLER_BOARD_SERIAL_NO,controller_board_serial_no,char,STRING32,Serial number of the controller board,,,,,,,,,,,,,,,,,,,The serial number for the controller board.,
+SPECIAL_FEATURES,special_features,char,STRING1024,"Extra features of the tag (algorithms, compressee etc.)",,,,,,,,,,,,,,,,,,,Additional tag features can be specified here such as algorithms used by the tag.,
+TAG_OWNER,tag_owner,char,STRING64,Tag owner,,,,,,,,,,,,,,,,,,,The owner of the tag (may be different from the data centre and operating institution).,
+OPERATING_INSTITUTION,operating_institution,char,STRING64,Operating institution of the tag,,,,,,,,,,,,,,,,,,,The operating institution of the tag (may be different from the tag owner and data centre).,
+CUSTOMISATION,customisation,char,STRING1024,"tag customisation, i.e. (institution and modifications",,,,,,,,,,,,,,,,,,,"Free form field to record changes made to the tag after manufacture and before deployment, i.e. this could be the customisation institution plus a list of modifications.",
+,,,,, ,,,,,,,,,,,,,,,,,,,
+DEPLOYMENT_DATE,deployment_date,char,DATE_TIME,Date (UTC) of the deployment,,YYYYMMDDHHMISS,,,,,,,,,,,,,,,,,Date and time (UTC) of deployment of the tag. Format : YYYYMMDDHHMISS,20011230090500 : December 30th 2001 03:05:00
+DEPLOYMENT_LATITUDE,deployment_latitude,double,,Latitude of the tag when deployed,,,degree_north,99999,-90,90,,,,,,,,,,,,,Latitude of the deployment. Unit : degree north.,44.4991 : 44� 29� 56.76�� N
+DEPLOYMENT_LONGITUDE,deployment_longitude,double,,Longitude of the tag when deployed,,,degree_east,99999,-180,180,,,,,,,,,,,,,Longitude of the deployment. Unit : degree east.,16.7222 : 16� 43� 19.92�� E
+DEPLOYMENT_QC,deployment_qc,char,,"Quality on deployment date, time and location",,POPSTAR reference table 2,,,,,,,,,,,,,,,,,"Quality flag on deployment date, time and location. The flag scale is described in the reference table 2. ",�1� : launch location seems correct.
+START_DATE,start_date,char,DATE_TIME,Date (UTC) of the first descent of the tag,,YYYYMMDDHHMISS,,,,,,,,,,,,,,,,,Date and time (UTC) of the first descent of the tag. Format : YYYYMMDDHHMISS,20011230090500 : December 30th 2001 06:05:00 AM
+START_DATE_QC,start_date_qc,char,,Quality on start date,,POPSTAR reference table 2,,,,,,,,,,,,,,,,,Quality flag on start date. The flag scale is described in the reference table 2.,�1� : start date seems correct.
+STARTUP_DATE,startup_date,char,DATE_TIME,Date (UTC) of the activation of the tag,,YYYYMMDDHHMISS,,,,,,,,,,,,,,,,,Date and time (UTC) of the activation of the tag before or just after deployment. Format : YYYYMMDDHHMISS ,20011230090500 : December 30th 2001 06:05:00 AM
+STARTUP_DATE_QC,startup_date_qc,char,,Quality on startup date,,POPSTAR reference table 2,,,,,,,,,,,,,,,,,Quality flag on startup date. The flag scale is described in the reference table 2.,�1� : start date seems correct.
+DEPLOYMENT_PLATFORM,deployment_platform,char,STRING32,Identifier of the deployment platform,,,,,,,,,,,,,,,,,,,"Identifier of the deployment platform, i.e. vessel or ship name.",L�ATALANTE 
+DEPLOYMENT_CRUISE_ID,deployment_cruise_id,char,STRING32,Identification number or reference number of the cruise used to deploy the tag,,,,,,,,,,,,,,,,,,,Identification number or reference number of the cruise used to deploy the tag.,
+END_MISSION_DATE,end_mission_date,char,DATE_TIME,Date (UTC) of the end of mission of the tag,,YYYYMMDDHHMISS,,,,,,,,,,,,,,,,,Date (UTC) of the end of mission of the tag. Format : YYYYMMDDHHMISS,20011230090500 : December 30th 2001 03:05:00
+END_MISSION_STATUS,end_mission_status,char,,Status of the end of mission of the tag,,"T:No more transmission received, R:Retrieved",,,,,,,,,,,,,,,,,"Status of the end of mission of the tag. �T�:No more transmission received, �R�:Retrieved ",
+,,,,,,,,,,,,,,,,,,,,,,,,
+CONFIG_PARAMETER_NAME,config_parameter_name,char,"N_CONFIG_PARAM, STRING128",Name of configuration parameter,,,,,,,,,,,,,,,,,,,Name of the configuration parameter, mission settings. See reference table 18 for standard configuration parameter names.
+CONFIG_PARAMETER_DATE,config_parameter_date,double,N_MISSION,Julian 1950 time of the mission,,,days since 1950-01-01T00:00:00Z,999999,,,,,,,,,,,,,,,Date of the mission.,
+CONFIG_PARAMETER_VALUE,config_parameter_value,double,"N_MISSION, N_CONFIG_PARAM",Value of configuration parameter,,,,99999.f,,,,,,,,,,,,,,,Value of the configuration parameter, mission settings.
+,,,,,,,,,,,,,,,,,,,,,,,,
+SENSOR,sensor,char,"N_SENSOR, STRING32",Name of the sensor mounted on the tag,,POPSTAR reference table 25,,,,,,,,,,,,,,,,,Names of the sensors mounted on the tag. See POPSTAR reference table 25. ,
+SENSOR_MAKER,sensor_maker,char,"N_SENSOR, STRING256",Name of the sensor manufacturer,,POPSTAR reference table 26,,,,,,,,,,,,,,,,,Name of the manufacturer of the sensor. See POPSTAR reference table 26 ,
+SENSOR_MODEL,sensor_model,char,"N_SENSOR, STRING256",Type of the sensor,,POPSTAR reference table 27,,,,,,,,,,,,,,,,,Model of sensor. See POPSTAR reference table 27. ,
+SENSOR_SERIAL_NO,sensor_serial_no,char,"N_SENSOR, STRING16",Serial number of the sensor,,,,,,,,,,,,,,,,,,,Serial number of the sensor.,
+,,,,,,,,,,,,,,,,,,,,,,,,
+PARAMETER,parameter,char,"N_PARAM, STRING64",Name of parameter computed from tag measurements,,POPSTAR reference table 3a,,,,,,,,,,,,,,,,,Names of the parameters measured by tag sensors or derived from tag measurements. The parameter names are listed in reference table 3a.,
+PARAMETER_SENSOR,parameter_sensor,char,"N_PARAM, STRING128",Name of the sensor that measures this parameter,,POPSTAR reference table 25,,,,,,,,,,,,,,,,,Names of the sensors that measured the tag parameters. See POPSTAR reference table 25.,
+PARAMETER_UNITS,parameter_units,char,"N_PARAM, STRING32",Units of accuracy and resolution of the parameter,,,,,,,,,,,,,,,,,,,Units of accuracy and resolution of the parameter.,
+PARAMETER_ACCURACY,parameter_accuracy,char,"N_PARAM, STRING32",Accuracy of the parameter,,,,,,,,,,,,,,,,,,,Accuracy of the parameter.,
+,,,,,,,,,,,,,,,,,,,,,,,,
+DERIVATION_PARAMETER,derivation_parameter,char,"N_DERIVATION, STRING64",List of parameters with derivation or calibration information,,POPSTAR reference table 3a,,,,,,,,,,,,,,,,,Name of the derived or calibrated parameter. The list of parameters is in reference table 3a,TEMP
+DERIVATION_EQUATION,derivation_equation,char,"N_DERIVATION, STRING4096",Derivation or calibration equation for this parameter,,,,,,,,,,,,,,,,,,,Derivation or calibration equation applied to the parameter,Tc = a1 * T + a0
+DERIVATION_COEFFICIENT,derivation_coefficient,char,"N_DERIVATION, STRING4096",Derivation or calibration coefficients for this equation,,,,,,,,,,,,,,,,,,,Derivation or calibration coefficients for this equation.,"a1=0.99997 , a0=0.0021"
+DERIVATION_COMMENT,derivation_comment,char,"N_DERIVATION, STRING4096",Comment applying to this parameter derivation or calibration,,,,,,,,,,,,,,,,,,,Comment about this derivation or calibration,The sensor is not stable
+DERIVATION_DATE,derivation_date,char,"N_DERIVATION, DATE_TIME",Date (UTC) of derivation or calibration,,YYYYMMDDHHMISS,,,,,,,,,,,,,,,,,Date of the derivation or calibration. Format : YYYYMMDDHHMISS ,20011230090500 : December 30th 2001 09:05:00 AM 
+,,,,,,,,,,,,,,,,,,,,,,,,
+PARAMETER_TECH,parameter_tech,char,"N_PARAM_TECH, STRING64",Name of technical parameter reported by the tag,,POPSTAR reference table 3b,,,,,,,,,,,,,,,,,Names of the technical parameters measured by the tag. The technical parameter names are listed in reference table 3b. ,
+PARAMETER_TECH_UNITS,parameter_tech_units,char,"N_PARAM_TECH, STRING32",Units of accuracy and resolution of the technical parameter,,,,,,,,,,,,,,,,,,,Units of accuracy and resolution of the technical parameter.,
+PARAMETER_TECH_ACCURACY,parameter_tech_accuracy,char,"N_PARAM_TECH, STRING32",Accuracy of the technical parameter,,,,,,,,,,,,,,,,,,,Accuracy of the technical parameter.,
+PARAMETER_TECH_RESOLUTION,parameter_tech_resolution,char,"N_PARAM_TECH, STRING32",Resolution of the technical parameter,,,,,,,,,,,,,,,,,,,Resolution of the technical parameter measured by the tag (note that this is not necessarily equivalent to the resolution of the technical parameter returned by the tag through telemetry).,
+,,,,,,,,,,,,,,,,,,,,,,,,
+HISTORY_INSTITUTION,history_institution,char,"N_HISTORY, STRING2",Institution which performed action,,POPSTAR reference table 4,,,,,,,,,,,,,,,,,Institution that performed the action. Institution codes are described in reference table 4. ,IF for IFREMER
+HISTORY_STEP,history_step,char,"N_HISTORY, STRING4",Step in data processing,,POPSTAR reference table 12,,,,,,,,,,,,,,,,,Code of the step in data processing for this history record. The step codes are described in reference table 12.,PSGQ : Automatic QC of data reported in real-time has been performed
+HISTORY_SOFTWARE,history_software,char,"N_HISTORY, STRING8",Name of software which performed action,,Institution dependent,,,,,,,,,,,,,,,,,Name of the software that performed the action.This code is institution dependent. ,
+HISTORY_SOFTWARE_RELEASE,history_software_release,char,"N_HISTORY, STRING4",Version/release of software which performed action,,Institution dependent,,,,,,,,,,,,,,,,,Version of the software. This name is institution dependent. ,
+HISTORY_REFERENCE,history_reference,char,"N_HISTORY, STRING64",Reference of database,,Institution dependent,,,,,,,,,,,,,,,,,Code of the reference database used for quality control in conjunction with the software. This code is institution dependent. ,
+HISTORY_DATE,history_date,char,"N_HISTORY, DATE_TIME",Date the history record was created,,YYYYMMDDHHMISS,,,,,,,,,,,,,,,,,Date of the action.,20011217160057
+HISTORY_ACTION,history_action,char,"N_HISTORY, STRING64",Action performed on data,,POPSTAR reference table 7,,,,,,,,,,,,,,,,,Name of the action. The action codes are described in reference table 7. ,QCF$ for QC failed
+HISTORY_PARAMETER,history_parameter,char,"N_HISTORY, STRING16",Parameter action is performed on,,POPSTAR reference table 3a,,,,,,,,,,,,,,,,,Name of the parameter on which the action is performed. The parameter names are listed in reference table 3a. ,
+HISTORY_PREVIOUS_VALUE,history_previous_value,jfloat,N_HISTORY,Parameter/Flag previous value before action,,,,99999.f,,,,,,,,,,,,,,,Parameter or flag of the previous value before action.,2 (probably good) for a flag that was changed to 1 (good)
+HISTORY_START_TIME_INDEX,history_start_time_index,integer,N_HISTORY,Start time index action applied on,,,,99999,,,,,,,,,,,,,,,Start time index the action is applied to.,100
+HISTORY_STOP_TIME_INDEX,history_stop_time_index,integer,N_HISTORY,Stop time index action applied on,,,,99999,,,,,,,,,,,,,,,Stop time index the action is applied to.,150
+HISTORY_QCTEST,history_qctest,char,"N_HISTORY,  STRING16","Documentation of tests performed, tests failed (in hex form)",,Write tests performed when ACTION=QCP$, tests failed when ACTION=QCF$,,,,,,,,,,,,,,,,,"This field records the tests performed when ACTION is set to QCP$ (qc performed), the test failed when ACTION is set to QCF$ (qc failed). The QCTEST codes are describe in reference table 11. "
